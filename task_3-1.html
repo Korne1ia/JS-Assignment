@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Assignment</title>
+</head>
+<body>
+
+    <h1>JavaScript Assignment Output</h1>
+    <div id="output"></div>
+
+    <script type="module">
+        // Part 1: Simple IF statement
+        let wakeUpTime = 7; // Change this value to test different times
+        let outputText = "";
+
+        if (wakeUpTime === 7) {
+            outputText += "Part 1: I can catch the bus to school.\n";
+        }
+
+        // Part 2: IF ELSE statement
+        if (wakeUpTime === 7) {
+            outputText += "Part 2: I can take the bus to school.\n";
+        } else {
+            outputText += "Part 2: I have to take the car to school.\n";
+        }
+
+        // Part 3: ELSE IF statement for multiple options
+        if (wakeUpTime === 7) {
+            outputText += "Part 3: I can take the bus to school.\n";
+        } else if (wakeUpTime === 8) {
+            outputText += "Part 3: I can take the train to school.\n";
+        } else {
+            outputText += "Part 3: I have to take the car to school.\n";
+        }
+
+        // Part 4: Check if a number is positive or negative
+        let number = -5; // Test with positive, negative, and zero
+        if (number > 0) {
+            outputText += "Part 4: Positive\n";
+        } else if (number < 0) {
+            outputText += "Part 4: Negative\n";
+        }
+
+        // Part 5: Check if a number is positive, negative, or zero
+        if (number > 0) {
+            outputText += "Part 5: Positive\n";
+        } else if (number < 0) {
+            outputText += "Part 5: Negative\n";
+        } else {
+            outputText += "Part 5: Zero\n";
+        }
+
+        // Part 6: Photo upload size validation
+        let imageSize = Math.floor(Math.random() * 8) + 1; // Random size between 1 and 8
+        outputText += `Part 6: Image size is ${imageSize}MP - `;
+        if (imageSize >= 4) {
+            outputText += "Thank you.\n";
+        } else {
+            outputText += "The image is too small.\n";
+        }
+
+        // Part 7: Additional condition for image size
+        if (imageSize < 4) {
+            outputText += "Part 7: The image is too small.\n";
+        } else if (imageSize >= 6) {
+            outputText += "Part 7: Image is too large.\n";
+        } else {
+            outputText += "Part 7: Thank you.\n";
+        }
+
+        // Part 8: Check if the month contains "r" and give vitamin advice
+        const monthList = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        const monthName = monthList[Math.floor(Math.random() * monthList.length)];
+        outputText += `Part 8: Current month is ${monthName} - `;
+        if (monthName.includes("r")) {
+            outputText += "You must take vitamin D.\n";
+        } else {
+            outputText += "You do not need to take vitamin D.\n";
+        }
+
+        // Part 9: Days in each month (no Date object)
+        let daysInMonth;
+        switch (monthName) {
+            case "February":
+                daysInMonth = 28;
+                break;
+            case "April":
+            case "June":
+            case "September":
+            case "November":
+                daysInMonth = 30;
+                break;
+            default:
+                daysInMonth = 31;
+        }
+        outputText += `Part 9: Days in ${monthName}: ${daysInMonth}\n`;
+
+        // Part 10: Gallery status based on the month
+        outputText += `Part 10: Gallery status in ${monthName} - `;
+        if (monthName === "March" || monthName === "May") {
+            outputText += "The gallery is closed for refurbishing.\n";
+        } else if (monthName === "April") {
+            outputText += "The gallery is open in temporary premises.\n";
+        } else {
+            outputText += "The gallery is open.\n";
+        }
+
+        // Display output in HTML
+        document.getElementById("output").innerText = outputText;
+    </script>
+</body>
+</html>
